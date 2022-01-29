@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 
 import { useAppContext } from '../App.provider';
 import { MoodItemRow } from '../components/MoodItemRow';
@@ -8,10 +8,13 @@ export const History: React.FC = () => {
   const appContext = useAppContext();
 
   return (
-    <View>
-      {appContext.moodList.flatMap((item, index) => (
-        <MoodItemRow item={item} key={index} />
-      ))}
-    </View>
+    <ScrollView>
+      {appContext.moodList
+        .slice()
+        .reverse()
+        .flatMap(item => (
+          <MoodItemRow item={item} key={item.timestamp} />
+        ))}
+    </ScrollView>
   );
 };
