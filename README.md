@@ -5,6 +5,7 @@ These experiments cover different tools and concepts related to mobile developme
 ## :toolbox: Tools
 
 - [Expo](https://docs.expo.dev/index.html)
+- [Metro](https://facebook.github.io/metro/)
 
 ## :rocket: Projects
 
